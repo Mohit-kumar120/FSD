@@ -1,0 +1,105 @@
+h1 {
+    text-decoration:black underline dotted;
+    color: green;
+    text-align:center;
+}
+
+.input-box {
+    width: 300px;
+    height: 35px;
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    /* 🔥 corner curve */
+    box-sizing: border-box;
+}
+
+#username {
+
+    width: 300px;
+    height: 35px;
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+}
+
+#age {
+    width: 300px;
+    height: 35px;
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#email {
+    width: 300px;
+    height: 35px;
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    color: white;
+}
+
+#Sub {
+    background-color: blue;
+
+
+
+    width: 300px;
+    height: 35px;
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #777;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#res {
+    background-color: red;
+    width: 300px;
+    height: 35px;
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #777;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+body {
+    body {
+        
+        margin: 0;
+        height: 100vh;
+        /* full screen height */
+        display: flex;
+        justify-content: center;
+        /* horizontal center */
+        align-items: center;
+        /* vertical center */
+    }
+   .container {
+    width: 350px;
+    margin: auto;              /* page ke center */
+    padding: 25px;             /* border ke andar space */
+    text-align: left;          /* text proper rahe */
+    box-sizing: border-box;
+}
+
+}
+
+.container {
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 15px;
+}
