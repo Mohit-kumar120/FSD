@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Experiment 2.1</title>
+    </head>
+    <body>
+        <h1>Live Character Counterer</h1>
+        <textarea id="ta" rows="10" cols="50" oninput="live()"></textarea>
+        <p>Total Characters: <span id="c"></span></p>
+    </body>
+    <script>
+        function live() {
+            let ta = document.getElementById("ta").value.length;
+            document.getElementById("c").innerText = ta;
+        }
+    </script>
+</html>

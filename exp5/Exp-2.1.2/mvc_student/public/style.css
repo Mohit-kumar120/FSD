@@ -1,0 +1,25 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.main-title {
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.student-card {
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+}
+
+.btn {
+    border-radius: 8px;
+}
+
+.card {
+    border: none;
+}

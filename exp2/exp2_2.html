@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dynamic Product Filter</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    padding: 40px;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  select {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .electronics {
+    background: #3b82f6;
+    color: white;
+  }
+
+  .clothing {
+    background: #93c5fd;
+    color: white;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>Product Filter</h1>
+
+<label>Filter by:</label>
+<select id="filter">
+  <option value="all">All Products</option>
+  <option value="electronics">Electronics</option>
+  <option value="clothing">Clothing</option>
+</select>
+
+<div class="products" id="productList"></div>
+
+<script>
+  const products = [
+    { name: "Wireless Headphones", price: 129.99, category: "electronics" },
+    { name: "Cotton T-Shirt", price: 24.99, category: "clothing" },
+    { name: "Bluetooth Speaker", price: 89.99, category: "electronics" },
+    { name: "Denim Jeans", price: 59.99, category: "clothing" }
+  ];
+
+  const productList = document.getElementById("productList");
+  const filter = document.getElementById("filter");
+
+  function displayProducts(category) {
+    productList.innerHTML = "";
+
+    products
+      .filter(p => category === "all" || p.category === category)
+      .forEach(p => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+          <h3>${p.name}</h3>
+          <p>$${p.price}</p>
+          <span class="tag ${p.category}">${p.category}</span>
+        `;
+
+        productList.appendChild(card);
+      });
+  }
+
+  filter.addEventListener("change", () => {
+    displayProducts(filter.value);
+  });
+
+  displayProducts("all");
+</script>
+
+</body>
+</html>

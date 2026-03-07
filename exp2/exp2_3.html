@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SVG Drawing Tool</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  .tool {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    width: 80vw;
+    max-width: 900px;
+  }
+
+  .controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  svg {
+    width: 100%;
+    height: 50vh;
+    border: 2px dashed #ddd;
+    border-radius: 12px;
+    cursor: crosshair;
+  }
+
+  .count {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 18px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="tool">
+  <div class="controls">
+    <button id="undo">Undo</button>
+
+    <label>
+      Circle Color:
+      <input type="color" id="colorPicker" value="#3b82f6">
+    </label>
+  </div>
+
+  <svg id="canvas"></svg>
+
+  <div class="count">
+    Circles drawn: <span id="total">0</span>
+  </div>
+</div>
+
+<script>
+  const svg = document.getElementById("canvas");
+  const undoBtn = document.getElementById("undo");
+  const countText = document.getElementById("total");
+  const colorPicker = document.getElementById("colorPicker");
+
+  let circles = [];
+
+  svg.addEventListener("click", (e) => {
+    const rect = svg.getBoundingClientRect();
+    const cx = e.clientX - rect.left;
+    const cy = e.clientY - rect.top;
+
+    const circle = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "circle"
+    );
+
+    circle.setAttribute("cx", cx);
+    circle.setAttribute("cy", cy);
+    circle.setAttribute("r", 8);
+    circle.setAttribute("fill", colorPicker.value);
+
+    svg.appendChild(circle);
+    circles.push(circle);
+    updateCount();
+  });
+
+  undoBtn.addEventListener("click", () => {
+    if (circles.length === 0) return;
+
+    const last = circles.pop();
+    svg.removeChild(last);
+    updateCount();
+  });
+
+  function updateCount() {
+    countText.textContent = circles.length;
+  }
+</script>
+
+</body>
+</html>
