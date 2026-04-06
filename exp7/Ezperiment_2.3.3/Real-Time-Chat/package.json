@@ -1,0 +1,15 @@
+{
+  "name": "exp2-3-3-realtime-chat",
+  "version": "1.0.0",
+  "description": "Experiment 2.3.3 – Real-Time Chat with WebSocket / Socket.IO",
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "start:server": "npm start --prefix server",
+    "start:client": "npm start --prefix client",
+    "dev": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "build": "npm run build --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}

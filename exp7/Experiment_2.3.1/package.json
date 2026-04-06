@@ -1,0 +1,15 @@
+{
+  "name": "experiment-2-3-1-mern",
+  "version": "1.0.0",
+  "description": "Full Stack MERN Integration — React + Express + MongoDB via Axios",
+  "private": true,
+  "scripts": {
+    "install:all":  "npm install --prefix backend && npm install --prefix frontend",
+    "start:backend": "npm run dev --prefix backend",
+    "start:frontend": "npm start --prefix frontend",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
