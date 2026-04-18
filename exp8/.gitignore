@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+*.log
+
+# Vite
+dist/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs
+build/
+out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Zip files
+*.zip
+exp8.zip
+
